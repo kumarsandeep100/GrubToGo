@@ -1,4 +1,27 @@
+############################
+# Dependencies
+############################
+node_modules/
+jspm_packages/
+
+############################
+# Build / Output
+############################
+dist/
+dist-ssr/
+build/
+coverage/
+
+############################
+# Environment Variables
+############################
+.env
+.env.*
+*.local
+
+############################
 # Logs
+############################
 logs
 *.log
 npm-debug.log*
@@ -7,18 +30,39 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+############################
+# Firebase
+############################
+.firebase/
+firebase-debug.log
 
-# Editor directories and files
+############################
+# IDE / Editor
+############################
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+############################
+# OS Files
+############################
+.DS_Store
+Thumbs.db
+
+############################
+# Testing
+############################
+cypress/videos/
+cypress/screenshots/
+
+############################
+# Optional (safe to ignore)
+############################
+.cache/
+.parcel-cache/
+.eslintcache
