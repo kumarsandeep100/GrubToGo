@@ -1,58 +1,54 @@
-# React + Vite
+# GrubToGo 🍔
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+GrubToGo is a food ordering web application built using React and Vite. The platform supports role-based access for Students and Caterers, allowing users to browse deals, place orders, and manage limited-time discounts.
 
-Currently, two official plugins are available:
+## Tech Stack
+- React
+- Vite
+- JavaScript
+- HTML / CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features
 
-## React Compiler.
+### Authentication & Roles
+- Users can register as **Student** or **Caterer** using a toggle.
+- Student emails must end with `@pace.edu`.
+- Caterer emails must end with `.staff@pace.edu`.
+- After registration:
+  - Students are redirected to the Student dashboard.
+  - Caterers are redirected to the Caterer dashboard.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Deals Page (Limited-Time Discounts)
+- Aggregates promotional items from all stores.
+- Each deal includes:
+  - Original price
+  - Discount percentage
+  - Automatically calculated discounted price
+  - Live countdown timer until expiry
+- When a deal expires, the UI visually disables the item.
 
-## Expanding the ESLint configuration.
+### Frontend Deal Logic
+- Deals are defined in a local data file and enriched with store metadata.
+- The UI dynamically derives discounted prices and countdown timers.
+- Hot reload allows instant updates during development.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-## Register Page
+### Caterer Workflow (Current Implementation)
+- Caterers can update deals by modifying the local deals data file.
+- Supports changing item details, pricing, discounts, and expiration times.
+- Designed to be easily extended to backend storage (e.g., Firebase / Firestore).
 
-- Users can choose between **Student** and **Caterer** using a toggle.
-- Student email must be a valid `@pace.edu` address.
-- Caterer email must end with `.staff@pace.edu`.
-- After successful registration:
-  - Students are redirected to the student page.
-  - Caterers are redirected to the caterer page.
+## Project Structure
+- `src/pages/Deals/` – Deals page UI and logic
+- `src/assets/` – Static data and helpers
+- `src/pages/Register/` – Registration and role selection
 
-## Deals Page (Limited-Time Discounts)
+## Future Enhancements
+- Replace static deal data with a Firestore collection
+- Enable real-time updates for deals
+- Add order history and checkout flow
+- Admin analytics for caterers
 
-The `Deals` page aggregates promotional items from all stores at discounted prices for a limited duration.
-
-Location: `src/pages/Deals/Deals.jsx` with styles in `Deals.css`.
-
-Data seed: `src/assets/deals.js` exports an array of deal objects and an `enrichDeals()` helper that attaches store metadata.
-
-Each deal object shape:
-
-```
-{
-  id: string,            // unique id for the deal
-  storeId: number,       // links to a store in stores.js
-  title: string,         // item name/label
-  originalPrice: number, // pre-discount price
-  discountPercent: number, // percent off (e.g. 25 for 25%)
-  expiry: ISO timestamp string // when the deal expires
-}
-```
-
-Frontend derives `discountedPrice` and displays a live countdown. When time reaches 0 the card is visually dimmed and button disabled.
-
-### Updating Deals (Caterer Workflow)
-Until backend integration (e.g. Firestore), caterer can edit `deals.js`:
-
-1. Duplicate an object and change `id`, `title`, pricing, and `discountPercent`.
-2. Set a new expiry: `new Date(Date.now() + X * 60 * 1000).toISOString()` where `X` is minutes (or convert hours → minutes).
-3. Ensure `storeId` matches one from `stores.js` for image/name resolution.
-4. Save; Vite hot-reload will refresh the Deals grid.
-
-Future enhancement: replace static seed with Firestore collection (fields mirroring above schema) and real-time updates.
-
+## Run Locally
+```bash
+npm install
+npm run dev
