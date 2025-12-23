@@ -1,0 +1,245 @@
+.deal-discount-percent {
+  display: inline-block;
+  background: #dc3545;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 2px 10px 2px 10px;
+  margin-left: 8px;
+  vertical-align: middle;
+  letter-spacing: 0.5px;
+  min-width: 32px;
+  text-align: center;
+}
+.deals-page {
+  padding: 1.5rem;
+}
+
+.deals-list-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.deals-list-page .deals-title {
+  margin: 0 0 0.5rem;
+}
+
+.deals-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+
+.deals-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.deal-card {
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  min-height: 120px;
+}
+
+.deal-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  background: #fafafa;
+  border-radius: 8px;
+  margin: 0 20px 0 0;
+}
+
+.deal-body {
+  padding: 0.75rem 0.9rem 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.deal-store {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.deal-title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.deal-pricing {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.deal-original {
+  color: #333;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* Cross out original price for students (not caterers) */
+.deal-original.student-view {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.deal-discounted {
+  color: #0d6efd;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.deal-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #dc3545;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 20px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+}
+
+.deal-countdown {
+  font-size: 0.75rem;
+  color: #a94442;
+  font-weight: 500;
+}
+
+.deal-expired {
+  opacity: 0.55;
+  filter: grayscale(0.3);
+}
+
+.deal-action-btn {
+  margin-top: 0.4rem;
+  border: none;
+  background: #198754;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background .15s;
+}
+
+.deal-action-btn:hover:not(:disabled) {
+  background: #157347;
+}
+
+.deal-action-btn:disabled {
+  background: #adb5bd;
+  cursor: not-allowed;
+}
+
+.back-to-stores-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1rem;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid #f97316;
+  background: #f97316;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(249, 115, 22, 0.18);
+  transition: transform 140ms ease, box-shadow 140ms ease, filter 140ms ease;
+  text-decoration: none;
+}
+
+.back-to-stores-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(249, 115, 22, 0.22);
+  filter: brightness(1.03);
+}
+
+.back-to-stores-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 22px rgba(249, 115, 22, 0.2);
+  filter: brightness(0.97);
+}
+
+.back-to-stores-btn:focus-visible {
+  outline: 3px solid rgba(249, 115, 22, 0.25);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .back-to-stores-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Store menu layout (student + caterer) */
+.store-menu-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.store-menu-page .deals-title {
+  margin: 0 0 0.5rem;
+}
+
+.store-menu-page .back-to-stores-btn {
+  align-self: flex-start;
+}
+
+/* Standard inline alert box */
+.alert-box {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #f5c2c7;
+  background: #fff1f2;
+  color: #b42318;
+  box-shadow: 0 6px 18px rgba(180, 35, 24, 0.08);
+  font-weight: 600;
+}
+
+.alert-box strong {
+  font-weight: 700;
+}
+
+.alert-box--success {
+  border-color: #bbf7d0;
+  background: #ecfdf3;
+  color: #166534;
+  box-shadow: 0 6px 18px rgba(22, 101, 52, 0.08);
+}

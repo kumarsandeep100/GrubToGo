@@ -1,0 +1,144 @@
+.cart-page {
+	padding: 1.5rem;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+.cart-page h1 {
+	font-size: 2rem;
+	color: #333;
+	margin: 0 0 1rem;
+}
+
+.alert-box {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	padding: 12px 14px;
+	border-radius: 10px;
+	border: 1px solid #f5c2c7;
+	background: #fff1f2;
+	color: #b42318;
+	box-shadow: 0 6px 18px rgba(180, 35, 24, 0.08);
+	font-weight: 600;
+	margin-bottom: 1rem;
+}
+
+.alert-box strong {
+	font-weight: 700;
+}
+
+.alert-box--success {
+	border-color: #bbf7d0;
+	background: #ecfdf3;
+	color: #166534;
+	box-shadow: 0 6px 18px rgba(22, 101, 52, 0.08);
+}
+
+.cart-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.cart-row {
+	display: grid;
+	grid-template-columns: 72px 1fr auto auto;
+	align-items: center;
+	gap: 0.75rem;
+	background: #fff;
+	border: 1px solid #e2e2e2;
+	border-radius: 10px;
+	padding: 0.5rem 0.75rem;
+}
+
+.cart-thumb {
+	width: 72px;
+	height: 72px;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+.cart-title {
+	font-weight: 600;
+}
+
+.cart-store {
+	font-size: 0.8rem;
+	color: #666;
+}
+
+.cart-price {
+	font-weight: 600;
+}
+
+.cart-remove-btn {
+	background: #dc3545;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	width: 32px;
+	height: 32px;
+	font-size: 1rem;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.2s;
+}
+
+.cart-remove-btn:hover {
+	background: #c82333;
+}
+
+.cart-summary {
+	margin-top: 2rem;
+	padding: 1rem 1.25rem;
+	background: #fff;
+	border: 1px solid #e2e2e2;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	max-width: 420px;
+	align-self: flex-end;
+	margin-left: auto;
+}
+
+.cart-total {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1.05rem;
+	font-weight: 600;
+	padding-bottom: 0.75rem;
+	border-bottom: 2px solid #e2e2e2;
+}
+
+.cart-total-amount {
+	color: #28a745;
+}
+
+.checkout-btn {
+	background: #28a745;
+	color: white;
+	border: none;
+	border-radius: 8px;
+	padding: 0.85rem 1.4rem;
+	font-size: 0.95rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background 0.2s;
+	width: 100%;
+}
+
+.checkout-btn:hover:not(:disabled) {
+	background: #218838;
+}
+
+.checkout-btn:disabled {
+	background: #6c757d;
+	cursor: not-allowed;
+	opacity: 0.6;
+}
